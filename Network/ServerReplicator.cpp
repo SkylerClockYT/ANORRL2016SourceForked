@@ -66,7 +66,7 @@
 DYNAMIC_LOGGROUP(NetworkJoin)
 
 LOGGROUP(JoinSendExtraItemCount)
-FASTFLAGVARIABLE(DebugLocalRccServerConnection, false)
+FASTFLAG(DebugLocalRccServerConnection)
 FASTFLAG(RemoveUnusedPhysicsSenders)
 LOGGROUP(US14116)
 DYNAMIC_FASTFLAGVARIABLE(UseProtocolCompatibilityCheck, false)

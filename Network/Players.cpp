@@ -922,7 +922,7 @@ void Players::gamechat(const std::string& message)
 
 void Players::checkChat(const std::string& message)
 {
-	if (message.length > 140)
+	if (message.length() > 140)
 		throw std::runtime_error("Biiiitchhh that's way too long for your bitch ass!");
 	
 
@@ -2092,12 +2092,12 @@ void Players::onRemoteSysStats(int userId, const std::string& stat, const std::s
 		}
 		else
 		{
-			if (willKick) {
+			/*if (willKick) {
 				//Shut. It. Down.
 				StandardOut::singleton()->printf(MESSAGE_INFO, "Players::onRemoteSysStats disconnect not in the clist");
 				// AHA!
-				//disconnectPlayer(userId, Replicator::DisconnectReason_OnRemoteSysStats);
-			}
+				disconnectPlayer(userId, Replicator::DisconnectReason_OnRemoteSysStats);
+			}*/
 		}
 		return;
 	}

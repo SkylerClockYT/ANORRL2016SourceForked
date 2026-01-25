@@ -301,7 +301,7 @@ namespace RBX {
                 }
                 std::string signature(sigStart, sigEnd - sigStart);
 				
-				if (signature.length > 1024) {
+				if (signature.length() > 1024) {
 					throw std::runtime_error("");
 				}
 
