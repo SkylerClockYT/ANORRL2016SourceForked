@@ -13,7 +13,7 @@
 #include "Tool/DragUtilities.h"
 #include "Script/Script.h"
 
-DYNAMIC_FASTFLAGVARIABLE(AccessoriesAndAttachments, false)
+DYNAMIC_FASTFLAGVARIABLE(AccessoriesAndAttachments, true)
 
 namespace RBX {
 

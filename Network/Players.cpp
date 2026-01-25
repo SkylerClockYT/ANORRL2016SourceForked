@@ -922,6 +922,10 @@ void Players::gamechat(const std::string& message)
 
 void Players::checkChat(const std::string& message)
 {
+	if (message.length > 140)
+		throw std::runtime_error("Biiiitchhh that's way too long for your bitch ass!");
+	
+
 	if (!localPlayer)
 		throw std::runtime_error("No local Player to chat from");
 

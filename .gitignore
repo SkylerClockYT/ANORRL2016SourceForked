@@ -38,10 +38,11 @@
 */bin/*
 *\obj\*
 */obj/*
-*obj*
 *.log
 *.exp
 *\Release\*
 *Release*
 *\Debug\*
 *\NoOpt\*
+/cmake/android-ndk-r10e*
+/cmake/cmake-2.8.12.2-Linux-i386*

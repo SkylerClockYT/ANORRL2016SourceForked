@@ -189,7 +189,7 @@ static Reflection::BoundFuncDesc<Replicator, void()> func_EnableProcessPackets(&
 static Reflection::BoundFuncDesc<Replicator, void(double)> func_SetPropSyncExpiration(&Replicator::setPropSyncExpiration, "SetPropSyncExpiration", "seconds", Security::LocalUser);
 
 static Reflection::PropDescriptor<Replicator, int> prop_port("Port", category_Data, &Replicator::getPort, NULL, Reflection::PropertyDescriptor::UI, Security::LocalUser);
-static Reflection::PropDescriptor<Replicator, std::string> prop_ip("MachineAddress", category_Data, &Replicator::getIpAddress, NULL, Reflection::PropertyDescriptor::UI, Security::LocalUser);
+static Reflection::PropDescriptor<Replicator, std::string> prop_ip("MachineAddress", category_Data, &Replicator::getIpAddress, NULL, Reflection::PropertyDescriptor::UI, Security::Roblox);
 REFLECTION_END();
 
 RBX::Time Replicator::remoteRaknetTimeToLocalRbxTime(const RemoteTime& time)

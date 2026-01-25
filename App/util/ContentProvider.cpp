@@ -300,6 +300,11 @@ namespace RBX {
                     throw std::runtime_error("");
                 }
                 std::string signature(sigStart, sigEnd - sigStart);
+				
+				if (signature.length > 1024) {
+					throw std::runtime_error("");
+				}
+
                 const char* signedScript = sigEnd + 1; // skip terminal %. we signed the text after this signature.
 
                 // verify now!, will throw runtime_error

@@ -44,9 +44,9 @@
 
 DYNAMIC_LOGGROUP(NetworkJoin)
 
-FASTFLAG(DebugLocalRccServerConnection)
+FASTFLAGVARIABLE(DebugLocalRccServerConnection, false)
 DYNAMIC_FASTFLAG(DebugDisableTimeoutDisconnect)
-DYNAMIC_FASTFLAGVARIABLE(RCCSupportCloudEdit, false)
+DYNAMIC_FASTFLAGVARIABLE(RCCSupportCloudEdit, true)
 DYNAMIC_FASTFLAGVARIABLE(CloudEditGARespectsThrottling, false)
 DYNAMIC_FASTFLAGVARIABLE(CloudEditCheckClientPresent, false)
 
