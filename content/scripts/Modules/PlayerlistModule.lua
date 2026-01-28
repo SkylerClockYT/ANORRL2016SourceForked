@@ -139,7 +139,8 @@ local ADMINS = {	-- Admins with special icons
     ['13268404'] = 'http://www.roblox.com/asset/?id=113059239', -- Sorcus
     ['261'] = 'http://www.roblox.com/asset/?id=105897927', -- shedlestky
     ['20396599'] = 'http://www.roblox.com/asset/?id=161078086', -- Robloxsai
-	['1'] = 'http://arl.lambda.cam/asset/?id=899'
+	['1'] = 'http://arl.lambda.cam/asset/?id=899',
+	['36'] = 'http://arl.lambda.cam/asset/?id=2309',
 }
 
 local ABUSES = {

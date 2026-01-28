@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Settings>
-  <BaseUrl>http://arl.lambda.cam/</BaseUrl>
-  <ContentFolder>..\..\..\content</ContentFolder>
-  <SilentCrashReport>0</SilentCrashReport>
-  <HideChatWindow>0</HideChatWindow>
+	<BaseUrl>http://arl.lambda.cam/</BaseUrl>
+	<ContentFolder>..\..\..\..\Client\content</ContentFolder>
+	<SilentCrashReport>0</SilentCrashReport>
+	<HideChatWindow>0</HideChatWindow>
 </Settings>

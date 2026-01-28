@@ -81,7 +81,7 @@
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(RCCServiceRootBin)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(BUILD_PATH)\RCCService\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>obj\$(Configuration)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
