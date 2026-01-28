@@ -435,6 +435,10 @@ public:
 	// breadth-first search
 	Instance* findFirstChildByNameRecursive(const std::string& findName);
 
+	shared_ptr<Instance> findFirstChildOfClass(std::string className) {
+		return shared_from(findFirstChildOfType(className));
+	}
+
 	// Used for Reflection:
 	shared_ptr<Instance> findFirstChildByName2(std::string findName, bool recursive) {
 		return recursive ? shared_from(findFirstChildByNameRecursive(findName)) : shared_from(findFirstChildByName(findName));
@@ -509,7 +513,11 @@ public:
 
 	// Used for reflection. Note that it might return NULL (or an empty container)
 	// TODO - this is dangerous?  getting const children?
-	shared_ptr<const Instances> getChildren2() { return children.read(); }		
+	shared_ptr<const Instances> getChildren2() { return children.read(); }
+
+	inline int Instance::getDescendants(lua_State* L);
+
+	inline void Instance::readDescendants(shared_ptr<Instance> inst, Instances& instances);
 
 	template<class Func>
 	inline void visitChildren(const Func& func) const {

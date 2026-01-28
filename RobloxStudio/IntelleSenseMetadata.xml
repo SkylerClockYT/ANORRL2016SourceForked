@@ -107,10 +107,13 @@
   </ItemStruct>
   <ItemStruct name="CFrame">
     <StaticFunction name="new" tooltip="CFrame CFrame.new(number x, number y, number z)%1Creates a CFrame from position (x, y, z) &lt;a href=&#34;http://wiki.roblox.com/index.php/CFrame&#34;&gt;More Info&lt;/a&gt;"/>
-    <StaticFunction name="fromEulerAnglesXYZ" tooltip="CFrame CFrame.fromEulerAnglesXYZ(number rx, number ry, number rz)%1Creates a rotated CFrame using angles (rx, ry, rz) in radians"/>
+	<StaticFunction name="fromEulerAnglesXYZ" tooltip="CFrame CFrame.fromEulerAnglesXYZ(number rx, number ry, number rz)%1Creates a rotated CFrame using angles (rx, ry, rz) in radians"/>
+	<StaticFunction name="FromEulerAnglesXYZ" tooltip="CFrame CFrame.FromEulerAnglesXYZ(number rx, number ry, number rz)%1Creates a rotated CFrame using angles (rx, ry, rz) in radians"/>
     <StaticFunction name="Angles" tooltip="CFrame CFrame.Angles(number rx, number ry, number rz)%1Equivalent to fromEulerAnglesXYZ"/>
-    <StaticFunction name="fromAxisAngle" tooltip="CFrame CFrame.fromAxisAngle(Vector3 v, number r)%1Creates a rotated CFrame from a Unit Vector3 and a rotation in radians"/>
-    <Property name="p" tooltip="Vector3 CFrame.p%1The 3D position of the CFrame"/>
+	<StaticFunction name="fromAxisAngle" tooltip="CFrame CFrame.fromAxisAngle(Vector3 v, number r)%1Creates a rotated CFrame from a Unit Vector3 and a rotation in radians"/>
+	<StaticFunction name="FromAxisAngle" tooltip="CFrame CFrame.FromAxisAngle(Vector3 v, number r)%1Creates a rotated CFrame from a Unit Vector3 and a rotation in radians"/>
+	<Property name="p" tooltip="Vector3 CFrame.p%1The 3D position of the CFrame"/>
+	<Property name="Position" tooltip="Vector3 CFrame.Position%1The 3D position of the CFrame"/>
     <Property name="X" tooltip="Number CFrame.X%1The x-coordinate of the position" />
     <Property name="Y" tooltip="Number CFrame.Y%1The y-coordinate of the position" />
     <Property name="Z" tooltip="Number CFrame.Z%1The z-coordinate of the position" />
@@ -125,6 +128,13 @@
     <Function name="vectorToObjectSpace" tooltip="Vector3 CFrame:vectorToObjectSpace(Vector3 v3)%1Returns a Vector3 rotated from World to Object space.%1Equivalent to [(CFrame:inverse() - CFrame:inverse().p) * v3]"/>
     <Function name="components" tooltip="... CFrame:components()%1Returns the values: x, y, z, R00, R01, R02, R10, R11, R12, R20, R21, R22"/>
     <Function name="toEulerAnglesXYZ" tooltip="... CFrame:toEulerAnglesXYZ()%1Returns approximate angles that could be used to generate CFrame"/>
+	<Function name="ToWorldSpace" tooltip="CFrame CFrame:toWorldSpace(CFrame cf)%1Returns a CFrame transformed from Object to World space. Equivalent to [CFrame * cf]"/>
+	<Function name="ToObjectSpace" tooltip="CFrame CFrame:toObjectSpace(CFrame cf)%1Returns a CFrame transformed from World to Object space. Equivalent to [CFrame:inverse() * cf]"/>
+	<Function name="PointToWorldSpace" tooltip="Vector3 CFrame:pointToWorldSpace(Vector3 v3)%1Returns a Vector3 transformed from Object to World space. Equivalent to [CFrame * v3]"/>
+	<Function name="PointToObjectSpace" tooltip="Vector3 CFrame:pointtoObjectSpace(Vector3 v3)%1Returns a Vector3 transformed from World to Object space. Equivalent to [CFrame:inverse() * v3]"/>
+	<Function name="VectorToWorldSpace" tooltip="Vector3 CFrame:vectorToWorldSpace(Vector3 v3)%1Returns a Vector3 rotated from Object to World space. Equivalent to [(CFrame - CFrame.p) *v3]"/>
+	<Function name="VectorToObjectSpace" tooltip="Vector3 CFrame:vectorToObjectSpace(Vector3 v3)%1Returns a Vector3 rotated from World to Object space.%1Equivalent to [(CFrame:inverse() - CFrame:inverse().p) * v3]"/>
+	<Function name="ToEulerAnglesXYZ" tooltip="... CFrame:toEulerAnglesXYZ()%1Returns approximate angles that could be used to generate CFrame"/>
   </ItemStruct>
   <ItemStruct name="Region3">
     <StaticFunction name="new" tooltip="Region3 Region3.new(Vector3, Vector3)%1Creates a new Region3 out of two Vector3 values."/>

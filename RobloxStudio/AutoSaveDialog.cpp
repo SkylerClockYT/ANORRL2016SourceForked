@@ -33,7 +33,7 @@ AutoSaveDialog::AutoSaveDialog(QWidget* Parent)
 
     QString text = tr(
         "<font size=4><b>An auto-save recovery file was detected!</b></font><br><br>"
-        "This means that Roblox Studio was not shut down properly and <u><i>may not have saved your data</i></u>!<br><br>"
+        "This means that ANORRL Studio was not shut down properly and <u><i>may not have saved your data</i></u>!<br><br>"
         "Do you want to load the auto-save recovery file?<br>"
         "<ul>"
         "    <li>"
@@ -42,7 +42,7 @@ AutoSaveDialog::AutoSaveDialog(QWidget* Parent)
         "            with a different filename.<br>"
         "    </li>"
         "    <li>"
-        "        <font size=4><b><i>Ignore</i></b></font> will continue and leave the files alone.  However, the next time ROBLOX Studio "
+        "        <font size=4><b><i>Ignore</i></b></font> will continue and leave the files alone.  However, the next time ANORRL Studio "
         "            is run, this message box will pop up again.<br>"
         "    </li>"
         "    <li>"
@@ -55,7 +55,7 @@ AutoSaveDialog::AutoSaveDialog(QWidget* Parent)
 
     QString text = tr(
         "<font size=4><font size=6><b>An auto-save recovery file was detected!</b></font><br><br>"
-        "This means that Roblox Studio was not shut down properly and <u><i>may not have saved your data</i></u>!<br><br>"
+        "This means that ANORRL Studio was not shut down properly and <u><i>may not have saved your data</i></u>!<br><br>"
         "Do you want to load the auto-save recovery file?<br>"
         "<ul>"
         "    <li>"
@@ -64,7 +64,7 @@ AutoSaveDialog::AutoSaveDialog(QWidget* Parent)
         "            with a different filename.<br>"
         "    </li>"
         "    <li>"
-        "        <font size=5><b><i>Ignore</i></b></font> will continue and leave the files alone.  However, the next time ROBLOX Studio "
+        "        <font size=5><b><i>Ignore</i></b></font> will continue and leave the files alone.  However, the next time ANORRL Studio "
         "            is run, this message box will pop up again.<br>"
         "    </li>"
         "    <li>"

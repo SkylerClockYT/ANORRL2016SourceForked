@@ -1838,6 +1838,12 @@
             <string name="summary">Returns a read-only table of this Object's children</string>
           </Properties>
         </Item>
+		<Item class="ReflectionMetadataMember">
+		    <Properties>
+			    <string name="Name">GetDescendants</string>
+			    <string name="summary">Returns an array containing all of the descendants of the instance. Returns in preorder traversal, or in other words, where the parents come before their children, depth first.</string>
+		    </Properties>
+		</Item>
         <Item class="ReflectionMetadataMember">
           <Properties>
             <string name="Name">Remove</string>

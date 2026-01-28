@@ -1468,8 +1468,10 @@ const char* Bridge<G3D::CoordinateFrame>::className("CFrame");
 const luaL_reg CoordinateFrameBridge::classLibrary[] = {
 	{"new", newCoordinateFrame},
 	{"fromEulerAnglesXYZ", fromEulerAnglesXYZ},
+	{"FromEulerAnglesXYZ", fromEulerAnglesXYZ},
 	{"Angles", fromEulerAnglesXYZ},	//Synonym, much shorter for 
 	{"fromAxisAngle", fromAxisAngle},
+	{"FromAxisAngle", fromAxisAngle},
 	{NULL, NULL}
 };
 
@@ -1738,7 +1740,7 @@ int CoordinateFrameBridge::fromAxisAngle(lua_State *L)
 template<>
 int Bridge<G3D::CoordinateFrame>::on_index(const G3D::CoordinateFrame& object, const char* name, lua_State *L)
 {
-	if (strcmp(name,"p")==0)
+	if (strcmp(name,"p")==0 || strcmp(name, "Position") == 0)
 	{
 		Vector3Bridge::pushVector3(L, object.translation);
 		return 1;
@@ -1763,43 +1765,43 @@ int Bridge<G3D::CoordinateFrame>::on_index(const G3D::CoordinateFrame& object, c
 		return 1;
 	} 
 
-	if (strcmp(name,"toWorldSpace")==0)
+	if (strcmp(name,"toWorldSpace") == 0 || strcmp(name, "ToWorldSpace") == 0)
 	{
 		lua_pushvalue(L, -1);
 		lua_pushcclosure(L, CoordinateFrameBridge::on_toWorldSpace, 1);
 		return 1;
 	}
-	if (strcmp(name,"toObjectSpace")==0)
+	if (strcmp(name,"toObjectSpace")==0 || strcmp(name, "ToObjectSpace") == 0)
 	{
 		lua_pushvalue(L, -1);
 		lua_pushcclosure(L, CoordinateFrameBridge::on_toObjectSpace, 1);
 		return 1;
 	}
-	if (strcmp(name,"pointToWorldSpace")==0)
+	if (strcmp(name,"pointToWorldSpace")==0 || strcmp(name, "PointToWorldSpace") == 0)
 	{
 		lua_pushvalue(L, -1);
 		lua_pushcclosure(L, CoordinateFrameBridge::on_pointToWorldSpace, 1);
 		return 1;
 	}
-	if (strcmp(name,"pointToObjectSpace")==0)
+	if (strcmp(name,"pointToObjectSpace")==0 || strcmp(name, "PointToObjectSpace") == 0)
 	{
 		lua_pushvalue(L, -1);
 		lua_pushcclosure(L, CoordinateFrameBridge::on_pointToObjectSpace, 1);
 		return 1;
 	}
-	if (strcmp(name,"vectorToWorldSpace")==0)
+	if (strcmp(name,"vectorToWorldSpace")==0 || strcmp(name, "VectorToWorldSpace") == 0)
 	{
 		lua_pushvalue(L, -1);
 		lua_pushcclosure(L, CoordinateFrameBridge::on_vectorToWorldSpace, 1);
 		return 1;
 	}
-	if (strcmp(name,"vectorToObjectSpace")==0)
+	if (strcmp(name,"vectorToObjectSpace")==0 || strcmp(name, "VectorToObjectSpace") == 0)
 	{
 		lua_pushvalue(L, -1);
 		lua_pushcclosure(L, CoordinateFrameBridge::on_vectorToObjectSpace, 1);
 		return 1;
 	}
-	if (strcmp(name,"toEulerAnglesXYZ")==0)
+	if (strcmp(name,"toEulerAnglesXYZ")==0 || strcmp(name, "ToEulerAnglesXYZ") == 0)
 	{
 		lua_pushvalue(L, -1);
 		lua_pushcclosure(L, CoordinateFrameBridge::on_toEulerAnglesXYZ, 1);

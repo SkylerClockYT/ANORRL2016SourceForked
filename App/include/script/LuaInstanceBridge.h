@@ -29,6 +29,20 @@ namespace RBX { namespace Lua {
 		static int lockInstance(lua_State *L);
 		static int unlockInstance(lua_State *L);
 
+		template<class _InIt>
+		static int pushArray(_InIt _First, _InIt _Last, lua_State* const L)
+		{
+			lua_createtable(L, _Last - _First, 0);
+			unsigned int i = 0;
+			while (_First != _Last)
+			{
+				push(L, *_First);
+				lua_rawseti(L, -2, ++i);
+				++_First;
+			}
+			return 1;
+		}
+
 		static boost::shared_ptr<Instance> getInstance(lua_State *L, unsigned int index)
 		{
 			return getPtr(L, index);

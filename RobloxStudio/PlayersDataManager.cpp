@@ -348,7 +348,7 @@ void AvatarLoader::headshotThumbnailDataLoaded(int playerId, RBX::HttpFuture fut
 	if (thumnailUri.is_initialized() && !thumnailUri.get().empty())
 	{
 		RBX::HttpOptions options;
-		options.setExternal(true);
+		options.setExternal(false);
 		RBX::HttpAsync::get(thumnailUri.get(), options).then(boost::bind(&invokeHeadshotThumbnailLoaded, QPointer<AvatarLoader>(this), playerId, _1));
 	}
 }

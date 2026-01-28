@@ -11,6 +11,7 @@
 #include "security/ApiSecurity.h"
 #include "v8datamodel/HackDefines.h"
 #include "VMProtectSDK.h"
+#include "script/LuaInstanceBridge.h"
 
 LOGVARIABLE(InstanceTreeManipulation, 0)
 
@@ -49,6 +50,9 @@ static Reflection::PropDescriptor<Instance, std::string> prop_classNameDeprecate
 static Reflection::PropDescriptor<Instance, int> prop_dataCost("DataCost", category_Data, &Instance::getPersistentDataCost, NULL, Reflection::PropertyDescriptor::UI, Security::RobloxPlace);
 
 static Reflection::BoundYieldFuncDesc<Instance, shared_ptr<Instance>(std::string)> func_WaitForChild(&Instance::waitForChild, "WaitForChild", "childName", Security::None);
+
+static Reflection::BoundFuncDesc<Instance, shared_ptr<Instance>(std::string)> func_findFirstChildOfClass(&Instance::findFirstChildOfClass, "FindFirstChildOfClass", "className", Security::None);
+static Reflection::CustomBoundFuncDesc<Instance, shared_ptr<const Instances>()> desc_getDescendants(&Instance::getDescendants, "GetDescendants", Security::None);
 
 const Reflection::PropDescriptor<Instance, std::string> Instance::desc_Name("Name", category_Data, &Instance::getName, &Instance::setName);
 const Reflection::RefPropDescriptor<Instance, Instance> Instance::propParent("Parent", category_Data, &Instance::getParentDangerous, &Instance::setParent, Reflection::PropertyDescriptor::UI);
@@ -388,7 +392,27 @@ shared_ptr<Instance> Instance::findFirstAncestorOf(const Instance* descendant) c
 	return shared_ptr<Instance>();
 }
 
+int Instance::getDescendants(lua_State* L)
+{
+	Instances alloc;
+	readDescendants(shared_from(this), alloc);
+	return Lua::ObjectBridge::pushArray(alloc.begin(), alloc.end(), L);
+}
 
+void Instance::readDescendants(shared_ptr<Instance> inst, Instances& instances)
+{
+	const copy_on_write_ptr<Instances>& children = inst->getChildren();
+	if (children)
+	{
+		boost::shared_ptr<const Instances> c(children.read());
+		Instances::const_iterator end = c->end();
+		for (Instances::const_iterator iter = c->begin(); iter != end; ++iter)
+		{
+			instances.push_back(*iter);
+			if ((*iter)->getChildren()) readDescendants(*iter, instances);
+		}
+	}
+}
 
 ChildAdded::ChildAdded(Instance* child):child(shared_from(child)) 
 {
